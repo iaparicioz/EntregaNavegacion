@@ -39,26 +39,12 @@ class MainActivity : AppCompatActivity() {
 
         val button3 = findViewById<TextView>(R.id.button3)
         button3.setOnClickListener{
-            val rd = random(1,2)
-
-            var tamano = edittext11.text.length
-
-            intent.putExtra("Variable Tamaño", tamano)
-
-            switch(number) {
-                case 1:
-                val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent)
-                break
-
-                case 2:
-                val intent = Intent(this, ThirdActivity::class.java)
-                var tamano = edittext11.text.length
-
-                intent.putExtra("Variable Tamaño", tamano)
-                startActivity(intent)
-                break
-            }
+            val aleatorio= listOf(
+                    SecondActivity::class.java
+                    ThirdActivity::class.java
+            )
+            val intent=Intent(this,aleatorio.random())
+            startActivity(intent)
 
         }
     }
